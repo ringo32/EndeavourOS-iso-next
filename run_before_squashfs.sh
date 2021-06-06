@@ -53,7 +53,7 @@ sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
-systemctl enable NetworkManager.service vmtoolsd.service vmware-vmblock-fuse.service systemd-timesyncd
+systemctl enable NetworkManager.service vboxservice vmtoolsd.service vmware-vmblock-fuse.service systemd-timesyncd
 systemctl set-default multi-user.target
 
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
@@ -65,12 +65,12 @@ pacman-key --populate
 pacman-key --refresh-keys
 pacman -Syy
 
-pacman -U --noconfirm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
-rm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
-pacman -U --noconfirm /root/calamares_config_next-1.1-4-any.pkg.tar.zst
-rm /root/calamares_config_next-1.1-4-any.pkg.tar.zst
-pacman -U --noconfirm /root/kvantum-theme-arc-20180614-3-any.pkg.tar.zst
-rm /root/kvantum-theme-arc-20180614-3-any.pkg.tar.zst
+#pacman -U --noconfirm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
+#rm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
+#pacman -U --noconfirm /root/calamares_config_next-1.1-4-any.pkg.tar.zst
+#rm /root/calamares_config_next-1.1-4-any.pkg.tar.zst
+#pacman -U --noconfirm /root/kvantum-theme-arc-20180614-3-any.pkg.tar.zst
+#rm /root/kvantum-theme-arc-20180614-3-any.pkg.tar.zst
 
 sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
 sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub
