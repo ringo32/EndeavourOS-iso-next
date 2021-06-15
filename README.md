@@ -1,13 +1,13 @@
 # EndeavourOS-iso-next 
 
-Maintaner: <joekamprad@endeavouros.com>
+Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
 
 testings on recreation of ISO from original latest Arch-ISO
 
 * currently not ready, but almost working, a reimplemantation of EndeavourOS changes into latest archiso-framework
 
 
-## Add and enable EndeavourOS Repository at your system
+## Add and enable EndeavourOS Repository at your system (currently unused)
 
 Add calamares package repo to your /etc/pacman.conf
 

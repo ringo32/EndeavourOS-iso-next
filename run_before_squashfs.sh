@@ -28,6 +28,13 @@ cd liveuser-desktop-settings
 rm -R /home/liveuser/.config
 cp -R .config /home/liveuser/
 chown -R liveuser:users /home/liveuser/.config
+cp .xinitrc .xprofile .Xauthority /home/liveuser/
+chown liveuser:users /home/liveuser/.xinitrc
+chown liveuser:users /home/liveuser/.xprofile
+chown liveuser:users /home/liveuser/.Xauthority
+cp -R .local /home/liveuser/
+chown -R liveuser:users /home/liveuser/.local
+chmod +x /home/liveuser/.local/bin/*
 cp user_pkglist.txt /home/liveuser/
 chown liveuser:users /home/liveuser/user_pkglist.txt
 rm /home/liveuser/.bashrc
@@ -59,18 +66,20 @@ systemctl set-default multi-user.target
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
-pacman-key --init
-pacman-key --add /usr/share/pacman/keyrings/endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
-pacman-key --populate
-pacman-key --refresh-keys
-pacman -Syy
+#pacman-key --init
+#pacman-key --add /usr/share/pacman/keyrings/endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
+#pacman-key --populate
+#pacman-key --refresh-keys
+#pacman -Syy
 
-#pacman -U --noconfirm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
-#rm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
-#pacman -U --noconfirm /root/calamares_config_next-1.1-4-any.pkg.tar.zst
-#rm /root/calamares_config_next-1.1-4-any.pkg.tar.zst
-#pacman -U --noconfirm /root/kvantum-theme-arc-20180614-3-any.pkg.tar.zst
-#rm /root/kvantum-theme-arc-20180614-3-any.pkg.tar.zst
+pacman -U --noconfirm /root/calamares_current-3.2.39.3-14-any.pkg.tar.zst
+rm /root/calamares_current-3.2.39.3-14-any.pkg.tar.zst
+pacman -U --noconfirm /root/calamares_config_next-1.3-1-any.pkg.tar.zst
+rm /root/calamares_config_next-1.3-1-any.pkg.tar.zst
+pacman -U --noconfirm /root/kvantum-theme-arc-20180614-4-any.pkg.tar.zst
+rm /root/kvantum-theme-arc-20180614-4-any.pkg.tar.zst
+
+rm -R /etc/pacman.d/gnupg
 
 sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
 sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub
