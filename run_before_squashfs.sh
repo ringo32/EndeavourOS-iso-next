@@ -59,11 +59,11 @@ systemctl set-default multi-user.target
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
-pacman-key --init
-pacman-key --add /usr/share/pacman/keyrings/endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
-pacman-key --populate
-pacman-key --refresh-keys
-pacman -Syy
+#pacman-key --init
+#pacman-key --add /usr/share/pacman/keyrings/endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
+#pacman-key --populate
+#pacman-key --refresh-keys
+#pacman -Syy
 
 #pacman -U --noconfirm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
 #rm /root/calamares_current-3.2.39.3-10-any.pkg.tar.zst
