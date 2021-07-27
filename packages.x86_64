@@ -73,7 +73,6 @@ nfs-utils
 nilfs-utils
 gvfs
 gvfs-afc
-gvfs-goa
 gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
