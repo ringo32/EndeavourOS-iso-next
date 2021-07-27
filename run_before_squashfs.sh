@@ -72,15 +72,13 @@ sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 #pacman-key --refresh-keys
 #pacman -Syy
 
-#install packages build locally from ISO /root
-#pacman -U --noconfirm /root/calamares_current-3.2.39.3-14-any.pkg.tar.zst
-#rm /root/calamares_current-3.2.39.3-14-any.pkg.tar.zst
-#pacman -U --noconfirm /root/calamares_config_next-1.3-1-any.pkg.tar.zst
-#rm /root/calamares_config_next-1.3-1-any.pkg.tar.zst
-#pacman -U --noconfirm /root/kvantum-theme-arc-20180614-4-any.pkg.tar.zst
-#rm /root/kvantum-theme-arc-20180614-4-any.pkg.tar.zst
+pacman -U --noconfirm /root/calamares_current-3.2.40-2-any.pkg.tar.zst
+rm /root/calamares_current-3.2.40-2-any.pkg.tar.zst
+pacman -U --noconfirm /root/calamares_config_next-1.3-4-any.pkg.tar.zst
+rm /root/calamares_config_next-1.3-4-any.pkg.tar.zst
+pacman -U --noconfirm /root/kvantum-theme-arc-20180614-5-any.pkg.tar.zst
+rm /root/kvantum-theme-arc-20180614-5-any.pkg.tar.zst
 
-#remove keyrings used for ISO buiilding from beeing used on LiveSession
 rm -R /etc/pacman.d/gnupg
 
 sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub

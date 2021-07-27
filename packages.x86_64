@@ -68,7 +68,7 @@ ntfs-3g
 reiserfsprogs
 jfsutils
 nvme-cli
-exfat-utils
+exfatprogs
 nfs-utils
 nilfs-utils
 gvfs
