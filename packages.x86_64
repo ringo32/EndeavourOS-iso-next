@@ -292,7 +292,6 @@ eos-log-tool
 keyserver-rank
 reflector-simple
 
-
 #vm-support
 qemu-guest-agent
 virtualbox-guest-utils
