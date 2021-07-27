@@ -236,6 +236,7 @@ clonezilla
 hdparm
 fsarchiver
 glances
+python-defusedxml
 inxi
 bash-completion
 downgrade
