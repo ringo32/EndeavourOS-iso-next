@@ -66,20 +66,23 @@ systemctl set-default multi-user.target
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
+# now done with recreating pacman keyring inside calamares: 
+# shellprocess_initialize_pacman
 #pacman-key --init
 #pacman-key --add /usr/share/pacman/keyrings/endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
 #pacman-key --populate
 #pacman-key --refresh-keys
 #pacman -Syy
 
-pacman -U --noconfirm /root/calamares_current-3.2.40-2-any.pkg.tar.zst
-rm /root/calamares_current-3.2.40-2-any.pkg.tar.zst
-pacman -U --noconfirm /root/calamares_config_next-1.3-4-any.pkg.tar.zst
-rm /root/calamares_config_next-1.3-4-any.pkg.tar.zst
-pacman -U --noconfirm /root/kvantum-theme-arc-20180614-5-any.pkg.tar.zst
-rm /root/kvantum-theme-arc-20180614-5-any.pkg.tar.zst
+# to install locally builded packages on ISO:
+#pacman -U --noconfirm /root/calamares_current-3.2.41.1-5-any.pkg.tar.zst
+#rm /root/calamares_current-3.2.41.1-5-any.pkg.tar.zst
+#pacman -U --noconfirm /root/calamares_config_next-2.0-4-any.pkg.tar.zst
+#rm /root/calamares_config_next-2.0-4-any.pkg.tar.zst
 
-rm -R /etc/pacman.d/gnupg
+# now done with recreating pacman keyring inside calamares: 
+# shellprocess_initialize_pacman
+#rm -R /etc/pacman.d/gnupg
 
 sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
 sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub

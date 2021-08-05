@@ -273,6 +273,7 @@ calamares_current
 calamares_configs_next
 
 #endeavouros-repo
+rate-mirrors-bin
 mkinitcpio-openswap
 ckbcomp
 grub2-theme-endeavouros
@@ -289,6 +290,7 @@ eos-update-notifier
 eos-log-tool
 keyserver-rank
 reflector-simple
+eos-rankmirrors
 
 #vm-support
 qemu-guest-agent
