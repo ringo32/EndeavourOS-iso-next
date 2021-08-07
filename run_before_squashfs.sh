@@ -27,21 +27,21 @@ git clone -b next --single-branch https://github.com/endeavouros-team/liveuser-d
 cd liveuser-desktop-settings
 rm -R /home/liveuser/.config
 cp -R .config /home/liveuser/
-chown -R liveuser:users /home/liveuser/.config
+chown -R liveuser:liveuser /home/liveuser/.config
 cp .xinitrc .xprofile .Xauthority /home/liveuser/
-chown liveuser:users /home/liveuser/.xinitrc
-chown liveuser:users /home/liveuser/.xprofile
-chown liveuser:users /home/liveuser/.Xauthority
+chown liveuser:liveuser /home/liveuser/.xinitrc
+chown liveuser:liveuser /home/liveuser/.xprofile
+chown liveuser:liveuser /home/liveuser/.Xauthority
 cp -R .local /home/liveuser/
-chown -R liveuser:users /home/liveuser/.local
+chown -R liveuser:liveuser /home/liveuser/.local
 chmod +x /home/liveuser/.local/bin/*
 cp user_pkglist.txt /home/liveuser/
-chown liveuser:users /home/liveuser/user_pkglist.txt
+chown liveuser:liveuser /home/liveuser/user_pkglist.txt
 rm /home/liveuser/.bashrc
 cp .bashrc /home/liveuser/
-chown liveuser:users /home/liveuser/.bashrc
-cp -R community_editions /home/liveuser/
-chown -R liveuser:users /home/liveuser/community_editions
+chown liveuser:liveuser /home/liveuser/.bashrc
+#cp -R community_editions /home/liveuser/
+#chown -R liveuser:liveuser /home/liveuser/community_editions
 cp LICENSE /home/liveuser/
 cd .. 
 rm -R liveuser-desktop-settings
