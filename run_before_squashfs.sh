@@ -56,7 +56,7 @@ chown root:root /etc/sudoers.d
 chown root:root /etc/sudoers.d/g_wheel
 chmod 755 /etc
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
-sed -i 's/#Server/Server/g' /etc/pacman.d/mirrorlist
+# sed -i 's/#Server/Server/g' /etc/pacman.d/mirrorlist
 sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
@@ -66,6 +66,11 @@ systemctl set-default multi-user.target
 
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
+
+# fetch fallback mirrorlist for offline installs:
+wget https://raw.githubusercontent.com/endeavouros-team/ISO-next/main/mirrorlist
+cp mirrorlist /etc/pacman.d/
+rm mirrorlist
 
 # now done with recreating pacman keyring inside calamares: 
 # shellprocess_initialize_pacman
