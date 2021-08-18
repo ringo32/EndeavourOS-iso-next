@@ -41,6 +41,9 @@ to install locally builded packages on ISO:
 you can do so like that putting the packages inside ISO-next/airootfs/root/ and use this lines:
 
 `#pacman -U --noconfirm /root/calamares_current-3.2.41.1-5-any.pkg.tar.zst`
+
 `#rm /root/calamares_current-3.2.41.1-5-any.pkg.tar.zst`
+
 `#pacman -U --noconfirm /root/calamares_config_next-2.0-4-any.pkg.tar.zst`
+
 `#rm /root/calamares_config_next-2.0-4-any.pkg.tar.zst`
