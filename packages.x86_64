@@ -37,7 +37,6 @@ amd-ucode
 mkinitcpio-archiso
 syslinux
 memtest86+
-xcompmgr
 arch-install-scripts
 
 #x-system
@@ -239,6 +238,7 @@ python-defusedxml
 inxi
 bash-completion
 downgrade
+rebuild-detector
 pcurses
 tldr
 
