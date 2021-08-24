@@ -84,7 +84,7 @@ rm mirrorlist
 #rm /root/calamares_current-3.2.41.1-7-any.pkg.tar.zst
 #pacman -U --noconfirm /root/calamares_config_next-2.2-5-any.pkg.tar.zst
 #rm /root/calamares_config_next-2.2-5-any.pkg.tar.zst
-rm /var/log/pacman.log
+#rm /var/log/pacman.log
 
 # now done with recreating pacman keyring inside calamares: 
 # shellprocess_initialize_pacman
