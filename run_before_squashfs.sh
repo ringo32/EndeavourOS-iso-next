@@ -21,6 +21,7 @@ locale-gen
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 usermod -s /usr/bin/bash root
 cp -aT /etc/skel/ /root/
+rm /root/xed.dconf
 chmod 700 /root
 useradd -m -p \"\" -g users -G 'sys,rfkill,wheel' -s /bin/bash liveuser
 #git clone -b next --single-branch https://github.com/endeavouros-team/liveuser-desktop-settings.git
@@ -41,8 +42,6 @@ chown liveuser:liveuser /home/liveuser/user_pkglist.txt
 rm /home/liveuser/.bashrc
 cp .bashrc /home/liveuser/
 chown liveuser:liveuser /home/liveuser/.bashrc
-#cp -R community_editions /home/liveuser/
-#chown -R liveuser:liveuser /home/liveuser/community_editions
 cp LICENSE /home/liveuser/
 cd .. 
 rm -R liveuser-desktop-settings
@@ -81,10 +80,11 @@ rm mirrorlist
 #pacman -Syy
 
 # to install locally builded packages on ISO:
-#pacman -U --noconfirm /root/calamares_current-3.2.41.1-5-any.pkg.tar.zst
-#rm /root/calamares_current-3.2.41.1-5-any.pkg.tar.zst
-#pacman -U --noconfirm /root/calamares_config_next-2.0-4-any.pkg.tar.zst
-#rm /root/calamares_config_next-2.0-4-any.pkg.tar.zst
+#pacman -U --noconfirm /root/calamares_current-3.2.41.1-7-any.pkg.tar.zst
+#rm /root/calamares_current-3.2.41.1-7-any.pkg.tar.zst
+#pacman -U --noconfirm /root/calamares_config_next-2.2-5-any.pkg.tar.zst
+#rm /root/calamares_config_next-2.2-5-any.pkg.tar.zst
+rm /var/log/pacman.log
 
 # now done with recreating pacman keyring inside calamares: 
 # shellprocess_initialize_pacman

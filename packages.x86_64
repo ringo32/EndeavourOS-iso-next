@@ -37,6 +37,7 @@ amd-ucode
 mkinitcpio-archiso
 syslinux
 memtest86+
+xcompmgr
 arch-install-scripts
 
 #x-system
@@ -238,7 +239,6 @@ python-defusedxml
 inxi
 bash-completion
 downgrade
-rebuild-detector
 pcurses
 tldr
 
@@ -269,8 +269,8 @@ polkit-qt5
 python
 solid
 qt5-tools
-calamares_current
-calamares_configs_next
+#calamares_current
+#calamares_configs_next
 
 #endeavouros-repo
 rate-mirrors-bin

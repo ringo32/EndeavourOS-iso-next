@@ -74,37 +74,3 @@ Server = http://mirror.ubrco.de/archlinux/$repo/os/$arch
 Server = https://mirror.ubrco.de/archlinux/$repo/os/$arch
 Server = http://mirrors.niyawe.de/archlinux/$repo/os/$arch
 Server = https://mirrors.niyawe.de/archlinux/$repo/os/$arch
-
-
-# Ranking data (2021-Aug-19):
-# Mirror                                                             Age      Fetch-time
-
-## Germany
-#https://mirror.f4st.host/archlinux/$repo/os/$arch                   2636     0.131902
-#https://mirror.pseudoform.org/$repo/os/$arch                        2636     0.119488
-#https://mirror.pkgbuild.com/$repo/os/$arch                          2636     0.123372
-#https://archlinux.thaller.ws/$repo/os/$arch                         2636     0.129895
-#https://mirror.wtnet.de/arch/$repo/os/$arch                         2636     0.141889
-#https://phinau.de/arch/$repo/os/$arch                               2636     0.150041
-#https://mirror.chaoticum.net/arch/$repo/os/$arch                    2636     0.150720
-#https://arch.jensgutermuth.de/$repo/os/$arch                        2636     0.160543
-#https://arch.mirror.zachlge.org/$repo/os/$arch                      2636     0.201593
-#https://mirror.mikrogravitation.org/archlinux/$repo/os/$arch        2636     0.221151
-#https://ftp.halifax.rwth-aachen.de/archlinux/$repo/os/$arch         2636     0.221737
-#https://mirror.bethselamin.de/$repo/os/$arch                        2636     0.230019
-#https://mirror.23m.com/archlinux/$repo/os/$arch                     2636     0.251750
-#https://mirror.moson.org/arch/$repo/os/$arch                        2636     0.254199
-#https://mirror.ubrco.de/archlinux/$repo/os/$arch                    2636     0.359607
-#https://mirrors.niyawe.de/archlinux/$repo/os/$arch                  2636     0.368666
-
-## United States
-#https://arch.mirror.constant.com/$repo/os/$arch                     2636     0.446359
-#https://mirror.lty.me/archlinux/$repo/os/$arch                      2636     0.644361
-#https://iad.mirrors.misaka.one/archlinux/$repo/os/$arch             2636     0.430138
-#https://america.mirror.pkgbuild.com/$repo/os/$arch                  2636     0.488536
-#https://arlm.tyzoid.com/$repo/os/$arch                              2636     0.564225
-#https://arch.hu.fo/archlinux/$repo/os/$arch                         2636     0.581172
-#https://archmirror1.octyl.net/$repo/os/$arch                        2636     0.636603
-#https://mirror.hackingand.coffee/arch/$repo/os/$arch                2636     0.665451
-#https://mirror.arizona.edu/archlinux/$repo/os/$arch                 2636     0.902504
-#https://mirrors.lug.mtu.edu/archlinux/$repo/os/$arch                2636     0.959980
