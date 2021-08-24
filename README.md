@@ -34,7 +34,7 @@ Systemd-boot for UEFI systems:
 
 Bios-boot for legacy systems:
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/bios-boot.png" alt="drawing" width="445"/>
+<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/bios-boot.png" alt="drawing" width="450"/>
 
 ## Install necessary packages
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
