@@ -6,6 +6,8 @@ Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
 # This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
 https://endeavouros.com
 
+<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/livesession.png" alt="drawing" width="200"/>
+
 EndeavourOS-archiso Sources: 
 https://github.com/endeavouros-team/EndeavourOS-iso-next
 
