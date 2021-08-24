@@ -2,10 +2,13 @@ This ISO is based on Arch-ISO modified hugely to provide Installation Environmen
 https://endeavouros.com
 
 EndeavourOS-archiso Sources: 
-https://github.com/endeavouros-team/EndeavourOS-archiso
+https://github.com/endeavouros-team/EndeavourOS-iso-next
 
 Arch-ISO Source: 
 https://gitlab.archlinux.org/archlinux/archiso
+
+Calamares as our installer:
+https://github.com/calamares/calamares
 
 Live environment will start now and let you install EndeavourOS to disk, or tryout XFCE4-Desktop from Live-Session.
 
@@ -24,3 +27,4 @@ Thank you for donating your trust in us!
 
 Welcome to your endeavour
 
+---
