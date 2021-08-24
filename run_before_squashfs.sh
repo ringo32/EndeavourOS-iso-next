@@ -23,8 +23,8 @@ usermod -s /usr/bin/bash root
 cp -aT /etc/skel/ /root/
 chmod 700 /root
 useradd -m -p \"\" -g users -G 'sys,rfkill,wheel' -s /bin/bash liveuser
-git clone -b next --single-branch https://github.com/endeavouros-team/liveuser-desktop-settings.git
-#git clone https://github.com/endeavouros-team/liveuser-desktop-settings.git
+#git clone -b next --single-branch https://github.com/endeavouros-team/liveuser-desktop-settings.git
+git clone https://github.com/endeavouros-team/liveuser-desktop-settings.git
 cd liveuser-desktop-settings
 rm -R /home/liveuser/.config
 cp -R .config /home/liveuser/
