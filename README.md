@@ -36,6 +36,10 @@ Bios-boot for legacy systems:
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/bios-boot.png" alt="drawing" width="600"/>
 
+## How to build ISO:
+To build you need to use installed EndeavourOS system or any archbased system with EndeavourOS repository enabled.
+https://github.com/endeavouros-team/mirrors
+
 ## Install necessary packages
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
 
