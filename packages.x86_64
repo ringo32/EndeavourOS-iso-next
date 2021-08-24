@@ -269,8 +269,8 @@ polkit-qt5
 python
 solid
 qt5-tools
-#calamares_current
-#calamares_configs_next
+calamares_current
+calamares_configs_next
 
 #endeavouros-repo
 rate-mirrors-bin
