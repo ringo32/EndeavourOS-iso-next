@@ -30,7 +30,7 @@ https://opencollective.com/endeavouros
 
 Systemd-boot for UEFI systems:
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/systemd-boot.png" alt="drawing" width="450"/>
+<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/systemd-boot.png" alt="drawing" width="460"/>
 
 Bios-boot for legacy systems:
 
