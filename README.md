@@ -9,9 +9,9 @@ Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
 
 Clone:\
-`git clone https://github.com/endeavouros-team/iso-next.git`
+`git clone https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
 
-`cd iso-next`
+`cd EndeavourOS-iso-next`
 
 ## Run fix permissions script
 `sudo ./fix_permissions.sh`
