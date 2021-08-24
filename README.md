@@ -4,28 +4,37 @@ Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
 
 
 # This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
+
 https://endeavouros.com
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/livesession.png" alt="drawing" width="600"/>
 
-EndeavourOS-archiso Sources: 
+EndeavourOS-archiso Sources:
+
 https://github.com/endeavouros-team/EndeavourOS-iso-next
 
-Arch-ISO Source: 
+Arch-ISO Source:
+
 https://gitlab.archlinux.org/archlinux/archiso
 
-Live environment on XFCE4-Desktop with calamares as your installer.
+Live environment on XFCE4-Desktop with calamares as your installer:
+
 https://github.com/calamares/calamares
 
 Bugs can be reported here:
+
 https://forum.endeavouros.com/c/Arch-based-related-questions/bug-reports
 
 Getting help at the forum: https://forum.endeavouros.com
-Help-Chat is available on telegram: https://t.me/Endeavouros/
-News at reddit: https://www.reddit.com/r/EndeavourOS/
+
+Help-Chat is available on telegram: https://t.me/Endeavouros
+
+News at reddit: https://www.reddit.com/r/EndeavourOS
+
 News at twitter: https://twitter.com/OsEndeavour
 
 Our journey wouldn't be made possible without the generosity of our open collective community:
+
 https://opencollective.com/endeavouros
 
 Systemd-boot for UEFI systems:
@@ -38,6 +47,7 @@ Bios-boot for legacy systems:
 
 ## How to build ISO:
 To build you need to use installed EndeavourOS system or any archbased system with EndeavourOS repository enabled.
+
 https://github.com/endeavouros-team/mirrors
 
 ## Install necessary packages
