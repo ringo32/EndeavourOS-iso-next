@@ -6,7 +6,7 @@ Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
 # This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
 https://endeavouros.com
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/livesession.png" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/livesession.png" alt="drawing" width="600"/>
 
 EndeavourOS-archiso Sources: 
 https://github.com/endeavouros-team/EndeavourOS-iso-next
@@ -28,6 +28,9 @@ News at twitter: https://twitter.com/OsEndeavour
 Our journey wouldn't be made possible without the generosity of our open collective community:
 https://opencollective.com/endeavouros
 
+<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/systemd-boot.png" alt="drawing" width="400"/>
+
+<img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/bios-boot.png" alt="drawing" width="400"/>
 
 ## Install necessary packages
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
