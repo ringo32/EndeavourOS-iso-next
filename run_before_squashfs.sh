@@ -67,7 +67,7 @@ cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
 # fetch fallback mirrorlist for offline installs:
-wget https://raw.githubusercontent.com/endeavouros-team/ISO-next/main/mirrorlist
+wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/main/mirrorlist
 cp mirrorlist /etc/pacman.d/
 rm mirrorlist
 
