@@ -2,7 +2,29 @@
 
 Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
 
-# The new ISO for EndeavourOS based on archiso sources and massive EndeavourOS scripts and changes 
+
+# This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
+https://endeavouros.com
+
+EndeavourOS-archiso Sources: 
+https://github.com/endeavouros-team/EndeavourOS-iso-next
+
+Arch-ISO Source: 
+https://gitlab.archlinux.org/archlinux/archiso
+
+Live environment on XFCE4-Desktop with calamares as your installer.
+https://github.com/calamares/calamares
+
+Bugs can be reported here:
+https://forum.endeavouros.com/c/Arch-based-related-questions/bug-reports
+
+Getting help at the forum: https://forum.endeavouros.com
+Help-Chat is available on telegram: https://t.me/Endeavouros/
+News at reddit: https://www.reddit.com/r/EndeavourOS/
+News at twitter: https://twitter.com/OsEndeavour
+
+Our journey wouldn't be made possible without the generosity of our open collective community:
+https://opencollective.com/endeavouros
 
 
 ## Install necessary packages
