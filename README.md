@@ -28,8 +28,9 @@ News at twitter: https://twitter.com/OsEndeavour
 Our journey wouldn't be made possible without the generosity of our open collective community:
 https://opencollective.com/endeavouros
 
+Systemd-boot for UEFI systems:
 <img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/systemd-boot.png" alt="drawing" width="400"/>
-
+Bios-boot for legacy systems:
 <img src="https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/NEXT/bios-boot.png" alt="drawing" width="400"/>
 
 ## Install necessary packages
