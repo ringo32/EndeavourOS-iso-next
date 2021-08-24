@@ -107,6 +107,7 @@ freetype2
 gpart
 gspell
 pacman-contrib
+rebuild-detector
 
 #general-hardware
 lsscsi
