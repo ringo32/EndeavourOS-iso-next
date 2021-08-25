@@ -2,8 +2,9 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2021.svg)]()
 
-Maintaner: [joekamprad](https://github.com/killajoe), [manuel](https://github.com/manuel-192) and our beloved community.
+Developer: [joekamprad](https://github.com/killajoe), [manuel](https://github.com/manuel-192) and our beloved community.
 
+More info: [EndeavourOS-GitHub-Development](https://endeavouros-team.github.io/EndeavourOS-Development/)
 
 ## This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
 
