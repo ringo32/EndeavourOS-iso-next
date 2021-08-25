@@ -1,5 +1,7 @@
-# EndeavourOS-iso-next 
+## EndeavourOS-iso-next
+
 [![Maintenance](https://img.shields.io/maintenance/yes/2021.svg)]()
+
 Maintaner: [joekamprad](https://github.com/killajoe), [manuel](https://github.com/manuel-192) and our beloved community.
 
 
