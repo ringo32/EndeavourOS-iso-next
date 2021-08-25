@@ -1,6 +1,6 @@
 # EndeavourOS-iso-next 
-
-Maintaner: <joekamprad@endeavouros.com> with the help of our beloved community
+[![Maintenance](https://img.shields.io/maintenance/yes/2021.svg)]()
+Maintaner: [joekamprad](https://github.com/killajoe), [manuel](https://github.com/manuel-192) and our beloved community.
 
 
 # This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
