@@ -3,6 +3,7 @@
 [![Maintenance](https://img.shields.io/maintenance/yes/2021.svg)]()
 
 Developer: [joekamprad](https://github.com/killajoe), [manuel](https://github.com/manuel-192) and our beloved community.
+Initial Developer: [fernandomaroto](https://github.com/Portergos)
 
 More info: [EndeavourOS-GitHub-Development](https://endeavouros-team.github.io/EndeavourOS-Development/)
 
