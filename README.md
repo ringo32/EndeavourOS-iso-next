@@ -5,7 +5,7 @@
 Maintaner: [joekamprad](https://github.com/killajoe), [manuel](https://github.com/manuel-192) and our beloved community.
 
 
-# This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
+## This ISO is based on Arch-ISO modified hugely to provide Installation Environment for EndeavourOS.
 
 https://endeavouros.com
 
