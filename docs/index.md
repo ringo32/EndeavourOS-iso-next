@@ -1,37 +1,76 @@
-## Welcome to GitHub Pages
+## EndeavourOS installer:
+EndeavourOS is mainly developing a bootable Live-ISO.
+Using calamares installer framework to get an Archbased system installed.
 
-You can use the [editor on GitHub](https://github.com/endeavouros-team/EndeavourOS-iso-next/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**Based on Arch-ISO:**
 
-### Markdown
+we do use the same base as Archlinux itself is using for the ISO, but we implement a live Desktop session with XFCE 4 starting on Arch-ISO boot.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The XFCE4 live session is a fully working Desktop with all you need, Firefox Browser, Filebrowser, Mediaplayer, and extra many tools for system-tasks.
 
-```markdown
-Syntax highlighted code block
+We do use our welcome-app to start the graphical installer [Calamares](https://calamares.io/) where you can read the latest release Info and get knowledge around EndeavourOS at all.
 
-# Header 1
-## Header 2
-### Header 3
+You can start gparted partition manager, and a selection of rescue tools, you can choose between offline install (Default XFCE4 Desktop themed and configured) or netinstall where you can choose the Desktop-Environment you want to install, what will perform an installation directly loading everything fresh from the internet.
 
-- Bulleted
-- List
+In addition welcome has also a installer starter for community editions maintained and developed by community members:
+[EndeavourOS-Community-Editions](https://github.com/EndeavourOS-Community-Editions)
 
-1. Numbered
-2. List
+![alt text](https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/main/docs/images/2021-08-25_11-24.png)
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+**All that is needed to build the ISO is available here:**
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[EndeavourOS-iso-next](https://github.com/endeavouros-team/EndeavourOS-iso-next)
 
-### Jekyll Themes
+Packages used for the squashfs-image and the Live-Session:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/endeavouros-team/EndeavourOS-iso-next/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[run_before_squashfs.sh](https://github.com/endeavouros-team/EndeavourOS-iso-next/blob/master/packages.x86_64)
 
-### Support or Contact
+Changes we need to implement to the squashfs-image are made with this:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[run_before_squashfs.sh](https://github.com/endeavouros-team/EndeavourOS-iso-next/blob/master/run_before_squashfs.sh)
+
+
+Our magic cleaner_scripts doing some magic we need to get all working as we want:
+
+[cleaner_script.sh](https://github.com/endeavouros-team/install-scripts/blob/master/cleaner_script.sh)
+[chrooted_cleaner_script.sh](https://github.com/endeavouros-team/install-scripts/blob/master/chrooted_cleaner_script.sh)
+
+![alt text](https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/main/docs/images/2021-08-25_11-50.png)
+
+## Offline install:
+
+offline install uses the same squashfs image used for the Live-Session of the ISO to copy the system to your HD, then removing unneeded apps, and configure user and boot process, after calamares is partitioning the disk.
+
+This method does not need an internet connection at all.
+
+## Netinstall:
+
+Netinstall method let you choose your Desktop environment to install and have options to install printing support or Accessibility Tools, it is possible to remove also single packages from the list.
+
+packages used for this are simply a list (written in YAML) you can find here:
+
+[install-scripts](https://github.com/endeavouros-team/install-scripts)
+
+This method needs a working internet connection to proceed and will install the chosen DE „vanilla“ (no theming and configuration on the DE itself) as it would do on Archlinux itself. But with a minimal selection of packages to get a base Desktop to start making it your own.
+
+XFCE4 and i3 have unselectable groups for the EndeavourOS theming.
+
+![alt text](https://github.com/endeavouros-team/EndeavourOS-iso-next/blob/main/docs/images/2021-08-25_11-28.png)
+
+## Calamares:
+[Calamares](https://calamares.io/)
+
+We do use the latest calamares sources for our install. Most modules are taking as they are and only configured to work for EnOS install (Archlinux) others are created on our own like the pacstrap module used for netinstall.
+
+[EndeavourOS Calamares Modules](https://github.com/endeavouros-team/Calamares_current)
+
+Also, both online and offline install using the same calamares.
+We do use welcome app and different settings.conf files to schedule the both installl methoids and handling Community Editions.
+
+## Dependencies:
+
+[Calamares Dependencies](https://github.com/calamares/calamares/blob/master/README.md)
+
+
