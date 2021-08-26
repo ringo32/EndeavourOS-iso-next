@@ -59,7 +59,7 @@ https://github.com/endeavouros-team/mirrors
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
 
 Clone:\
-`git clone -b release-08-21 --single-branch https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
+`git clone -b 08-2021 --single-branch https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
 
 `cd EndeavourOS-iso-next`
 
