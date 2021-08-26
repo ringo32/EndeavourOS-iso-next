@@ -24,8 +24,8 @@ cp -aT /etc/skel/ /root/
 rm /root/xed.dconf
 chmod 700 /root
 useradd -m -p \"\" -g users -G 'sys,rfkill,wheel' -s /bin/bash liveuser
-#git clone -b next --single-branch https://github.com/endeavouros-team/liveuser-desktop-settings.git
-git clone https://github.com/endeavouros-team/liveuser-desktop-settings.git
+git clone -b 08-2021 --single-branch https://github.com/endeavouros-team/liveuser-desktop-settings.git
+#git clone https://github.com/endeavouros-team/liveuser-desktop-settings.git
 cd liveuser-desktop-settings
 rm -R /home/liveuser/.config
 cp -R .config /home/liveuser/
@@ -67,7 +67,7 @@ cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
 # fetch fallback mirrorlist for offline installs:
-wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/main/mirrorlist
+wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/08-2021/mirrorlist
 cp mirrorlist /etc/pacman.d/
 rm mirrorlist
 
@@ -95,7 +95,7 @@ sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/gr
 sed -i 's?\#GRUB_THEME=.*?GRUB_THEME=\/boot\/grub\/themes\/EndeavourOS\/theme.txt?g' /etc/default/grub
 echo 'GRUB_DISABLE_SUBMENU=y' >> /etc/default/grub
 rm /boot/grub/grub.cfg
-wget https://raw.githubusercontent.com/endeavouros-team/liveuser-desktop-settings/master/dconf/xed.dconf
+wget https://raw.githubusercontent.com/endeavouros-team/liveuser-desktop-settings/08-2021/dconf/xed.dconf
 dbus-launch dconf load / < xed.dconf
 sudo -H -u liveuser bash -c 'dbus-launch dconf load / < xed.dconf'
 rm xed.dconf
