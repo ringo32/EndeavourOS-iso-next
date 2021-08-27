@@ -52,6 +52,8 @@ Bios-boot for legacy systems:
 
 ## How to build ISO:
 To build you need to use installed EndeavourOS system or any archbased system with EndeavourOS repository enabled.
+main branch is used for latest testing stable branch is always the one with the last release date, like **08-2021**
+So make sure you change the branch to build ISO taking main branch will may fail for you.
 
 https://github.com/endeavouros-team/mirrors
 
