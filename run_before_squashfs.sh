@@ -37,6 +37,8 @@ chown liveuser:liveuser /home/liveuser/.Xauthority
 cp -R .local /home/liveuser/
 chown -R liveuser:liveuser /home/liveuser/.local
 chmod +x /home/liveuser/.local/bin/*
+cp -R dconf /home/liveuser/
+chown -R liveuser:liveuser /home/liveuser/dconf
 cp user_pkglist.txt /home/liveuser/
 chown liveuser:liveuser /home/liveuser/user_pkglist.txt
 cp user_commands.bash /home/liveuser/
