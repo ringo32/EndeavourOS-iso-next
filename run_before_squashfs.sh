@@ -39,6 +39,8 @@ chown -R liveuser:liveuser /home/liveuser/.local
 chmod +x /home/liveuser/.local/bin/*
 cp user_pkglist.txt /home/liveuser/
 chown liveuser:liveuser /home/liveuser/user_pkglist.txt
+cp user_commands.bash /home/liveuser/
+chown liveuser:liveuser /home/liveuser/user_commands.bash
 rm /home/liveuser/.bashrc
 cp .bashrc /home/liveuser/
 chown liveuser:liveuser /home/liveuser/.bashrc
