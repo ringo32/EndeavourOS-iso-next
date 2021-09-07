@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 iso_name="endeavouros"
-iso_label="EndeavourOS_$(date +%Y%m)"
+iso_label="EOS_$(date +%Y%m)"
 iso_publisher="EndeavourOS <https://endeavouros.com>"
 iso_application="EndeavourOS Live/Rescue CD"
 iso_version="$(date +%Y.%m.%d)"
