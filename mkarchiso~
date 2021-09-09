@@ -143,8 +143,8 @@ _show_config() {
 _cleanup_pacstrap_dir() {
     _msg_info "Cleaning up in pacstrap location..."
     # Pull /usr/lib/endeavouros-release at place to use for prompt info in Live Session
-	mkdir -p "${pacstrap_dir}/usr/lib"
-	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"
+	mkdir -p "${airootfs_dir}/usr/lib"
+	echo "VERSION=${iso_version}" >> "${airootfs_dir}/usr/lib/endeavouros-release"
     # Delete all files in /boot
     [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete
     # Delete pacman database sync cache files (*.tar.gz)

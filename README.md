@@ -52,8 +52,6 @@ Bios-boot for legacy systems:
 
 ## How to build ISO:
 To build you need to use installed EndeavourOS system or any archbased system with EndeavourOS repository enabled.
-main branch is used for latest testing stable branch is always the one with the last release date, like **08-2021**
-So make sure you change the branch to build ISO taking main branch will may fail for you.
 
 https://github.com/endeavouros-team/mirrors
 
@@ -61,7 +59,7 @@ https://github.com/endeavouros-team/mirrors
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
 
 Clone:\
-`git clone https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
+`git clone -b 08-2021 --single-branch https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
 
 `cd EndeavourOS-iso-next`
 
