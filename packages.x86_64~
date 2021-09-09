@@ -270,8 +270,8 @@ polkit-qt5
 python
 solid
 qt5-tools
-calamares_current
-calamares_config_next
+#calamares_current
+#calamares_config_next
 
 #endeavouros-repo
 rate-mirrors-bin
@@ -299,3 +299,4 @@ virtualbox-guest-utils
 open-vm-tools
 xf86-input-vmmouse
 xf86-video-vmware
+
