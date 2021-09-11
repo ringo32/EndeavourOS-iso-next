@@ -13,6 +13,7 @@ it delets all stuff in /boot per default need to be changed to leave grub themin
     
 rm ${pacstrap_dir}/boot/initramfs-linux.img ${pacstrap_dir}/boot/initramfs-linux-fallback.img ${pacstrap_dir}/boot/intel-ucode.img ${pacstrap_dir}/boot/vmlinuz-linux
 
+```
 }
 
 # Cleanup airootfs
@@ -43,3 +44,13 @@ _cleanup_pacstrap_dir() {
 
     _msg_info "Done!"
 }
+```
+
+added parts for run_before_squashfs to run:
+
+```
+script_path="$( cd -P "$( dirname "$(readlink -f "$0")" )" && pwd )"
+# executed inside _mkairootfs_sfs right before squashfs
+RUN_BEFORE_SQUASHFS=$script_path/run_before_squashfs.sh
+```
+    $RUN_BEFORE_SQUASHFS`
