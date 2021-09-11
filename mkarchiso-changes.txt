@@ -6,12 +6,15 @@ added:
 	mkdir -p "${pacstrap_dir}/usr/lib"
 	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"`
   
-it delets all stuff in /boot per default need to be changed to leave grub theming and files there as they will be missing for offline installs.. 
-
+it deletes all stuff in /boot per default need to be changed to leave grub theming and files there as they will be missing for offline installs.. 
+done that in run_before_squashfs to have it do what we need...
 `# Delete all files in /boot
-    [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete`
-    
-rm ${pacstrap_dir}/boot/initramfs-linux.img ${pacstrap_dir}/boot/initramfs-linux-fallback.img ${pacstrap_dir}/boot/intel-ucode.img ${pacstrap_dir}/boot/vmlinuz-linux
+ #   [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete`
+```
+
+we need package databases present for offline installs and live-session:
+    # Delete pacman database sync cache
+    # [[ -d "${pacstrap_dir}/var/lib/pacman/sync" ]] && find "${pacstrap_dir}/var/lib/pacman/sync" -delete
 
 ```
 }
@@ -24,8 +27,6 @@ _cleanup_pacstrap_dir() {
 	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"
     # Delete all files in /boot
     # [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete
-    # Delete only kernel stuff in /boot
-    rm ${pacstrap_dir}/boot/initramfs-linux.img ${pacstrap_dir}/boot/initramfs-linux-fallback.img ${pacstrap_dir}/boot/intel-ucode.img ${pacstrap_dir}/boot/vmlinuz-linux
     # Delete pacman database sync cache files (*.tar.gz)
     [[ -d "${pacstrap_dir}/var/lib/pacman" ]] && find "${pacstrap_dir}/var/lib/pacman" -maxdepth 1 -type f -delete
     # Delete pacman database sync cache

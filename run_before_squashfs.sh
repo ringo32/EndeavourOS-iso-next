@@ -73,24 +73,12 @@ wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/08-
 cp mirrorlist /etc/pacman.d/
 rm mirrorlist
 
-# now done with recreating pacman keyring inside calamares:
-# shellprocess_initialize_pacman
-#pacman-key --init
-#pacman-key --add /usr/share/pacman/keyrings/endeavouros.gpg && sudo pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
-#pacman-key --populate
-#pacman-key --refresh-keys
-#pacman -Syy
-
 # to install locally builded packages on ISO:
 #pacman -U --noconfirm /root/calamares_current-3.2.42-1-any.pkg.tar.zst
 #rm /root/calamares_current-3.2.42-1-any.pkg.tar.zst
 #pacman -U --noconfirm /root/calamares_config_next-2.3-4-any.pkg.tar.zst
 #rm /root/calamares_config_next-2.3-4-any.pkg.tar.zst
 #rm /var/log/pacman.log
-
-# now done with recreating pacman keyring inside calamares:
-# shellprocess_initialize_pacman
-#rm -R /etc/pacman.d/gnupg
 
 sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
 sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub
@@ -100,6 +88,15 @@ echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
 
 # remove unneeded grub stuff from /boot
 rm /boot/grub/grub.cfg
+rm -R /boot/syslinux
+rm -R /boot/memtest86+
+rm /boot/amd-ucode.img
+rm /boot/initramfs-linux.img
+rm /boot/intel-ucode.img
+rm /boot/vmlinuz-linux
+
+# fix for r8169 module
+sed -i /usr/lib/modprobe.d/r8168.conf -e 's|r8169|r8168|'
 
 wget https://raw.githubusercontent.com/endeavouros-team/liveuser-desktop-settings/08-2021/dconf/xed.dconf
 dbus-launch dconf load / < xed.dconf
