@@ -143,10 +143,12 @@ _show_config() {
 _cleanup_pacstrap_dir() {
     _msg_info "Cleaning up in pacstrap location..."
     # Pull /usr/lib/endeavouros-release at place to use for prompt info in Live Session
-	mkdir -p "${pacstrap_dir}/usr/lib"
-	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"
+    mkdir -p "${pacstrap_dir}/usr/lib"
+    echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"
     # Delete all files in /boot
-    [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete
+    # [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete
+    # Delete only kernel stuff in /boot
+    rm ${pacstrap_dir}/boot/initramfs-linux.img ${pacstrap_dir}/boot/initramfs-linux-fallback.img ${pacstrap_dir}/boot/intel-ucode.img ${pacstrap_dir}/boot/vmlinuz-linux
     # Delete pacman database sync cache files (*.tar.gz)
     [[ -d "${pacstrap_dir}/var/lib/pacman" ]] && find "${pacstrap_dir}/var/lib/pacman" -maxdepth 1 -type f -delete
     # Delete pacman database sync cache
