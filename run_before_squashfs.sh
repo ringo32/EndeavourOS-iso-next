@@ -98,7 +98,8 @@ sed -i 's?\#GRUB_THEME=.*?GRUB_THEME=\/boot\/grub\/themes\/EndeavourOS\/theme.tx
 sed -i 's?\#GRUB_DISABLE_SUBMENU=y?GRUB_DISABLE_SUBMENU=y?g' /etc/default/grub
 echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
 
-# rm /boot/grub/grub.cfg --> seems mkarchiso is doing this now?
+# remove unneeded grub stuff from /boot
+rm /boot/grub/grub.cfg
 
 wget https://raw.githubusercontent.com/endeavouros-team/liveuser-desktop-settings/08-2021/dconf/xed.dconf
 dbus-launch dconf load / < xed.dconf
