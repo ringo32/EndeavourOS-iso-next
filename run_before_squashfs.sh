@@ -16,6 +16,7 @@ do_merge(){
 
 arch_chroot "
 
+# prepare livesession settings and user
 sed -i 's/#\(en_US\.UTF-8\)/\1/' /etc/locale.gen
 locale-gen
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
@@ -24,6 +25,9 @@ cp -aT /etc/skel/ /root/
 rm /root/xed.dconf
 chmod 700 /root
 useradd -m -p \"\" -g users -G 'sys,rfkill,wheel' -s /bin/bash liveuser
+
+# insert special desktop settings for installer livesession
+# plus fetching needed config files for user tools
 git clone -b 08-2021 --single-branch https://github.com/endeavouros-team/liveuser-desktop-settings.git
 #git clone https://github.com/endeavouros-team/liveuser-desktop-settings.git
 cd liveuser-desktop-settings
@@ -47,6 +51,21 @@ chown liveuser:liveuser /home/liveuser/.bashrc
 cp LICENSE /home/liveuser/
 cd ..
 rm -R liveuser-desktop-settings
+
+# live session theming
+wget https://raw.githubusercontent.com/endeavouros-team/liveuser-desktop-settings/08-2021/dconf/xed.dconf
+dbus-launch dconf load / < xed.dconf
+sudo -H -u liveuser bash -c 'dbus-launch dconf load / < xed.dconf'
+rm xed.dconf
+chmod -R 700 /root
+chown root:root -R /root
+chown root:root -R /etc/skel
+chmod 644 /usr/share/endeavouros/*.png
+rm -rf /usr/share/backgrounds/xfce/xfce-verticals.png
+ln -s /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png /usr/share/backgrounds/xfce/xfce-verticals.png
+chsh -s /bin/bash"
+
+# fixing permission and filesystem
 chmod 755 /etc/sudoers.d
 mkdir -p /media
 chmod 755 /media
@@ -56,15 +75,20 @@ chown 0 /etc/sudoers.d/g_wheel
 chown root:root /etc/sudoers.d
 chown root:root /etc/sudoers.d/g_wheel
 chmod 755 /etc
+
+# fix configurations
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
 # sed -i 's/#Server/Server/g' /etc/pacman.d/mirrorlist
 sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
+
+# enable systemd services
 systemctl enable NetworkManager.service vboxservice.service vmtoolsd.service vmware-vmblock-fuse.service systemd-timesyncd
 systemctl set-default multi-user.target
 
+# revert from arch preset to default preset
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
@@ -80,6 +104,7 @@ rm mirrorlist
 #rm /root/calamares_config_next-2.3-4-any.pkg.tar.zst
 #rm /var/log/pacman.log
 
+# set EndeavourOS specific grub config
 sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
 sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub
 sed -i 's?\#GRUB_THEME=.*?GRUB_THEME=\/boot\/grub\/themes\/EndeavourOS\/theme.txt?g' /etc/default/grub
@@ -95,20 +120,11 @@ rm /boot/initramfs-linux.img
 rm /boot/intel-ucode.img
 rm /boot/vmlinuz-linux
 
+# custom fixes currently needed
+
 # fix for r8169 module
 sed -i /usr/lib/modprobe.d/r8168.conf -e 's|r8169|r8168|'
 
-wget https://raw.githubusercontent.com/endeavouros-team/liveuser-desktop-settings/08-2021/dconf/xed.dconf
-dbus-launch dconf load / < xed.dconf
-sudo -H -u liveuser bash -c 'dbus-launch dconf load / < xed.dconf'
-rm xed.dconf
-chmod -R 700 /root
-chown root:root -R /root
-chown root:root -R /etc/skel
-chmod 644 /usr/share/endeavouros/*.png
-rm -rf /usr/share/backgrounds/xfce/xfce-verticals.png
-ln -s /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png /usr/share/backgrounds/xfce/xfce-verticals.png
-chsh -s /bin/bash"
 }
 
 #################################
