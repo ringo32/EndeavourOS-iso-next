@@ -63,7 +63,7 @@ chown root:root -R /etc/skel
 chmod 644 /usr/share/endeavouros/*.png
 rm -rf /usr/share/backgrounds/xfce/xfce-verticals.png
 ln -s /usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png /usr/share/backgrounds/xfce/xfce-verticals.png
-chsh -s /bin/bash"
+chsh -s /bin/bash
 
 # fixing permission and filesystem
 chmod 755 /etc/sudoers.d
@@ -124,7 +124,7 @@ rm /boot/vmlinuz-linux
 
 # fix for r8169 module
 sed -i /usr/lib/modprobe.d/r8168.conf -e 's|r8169|r8168|'
-
+"
 }
 
 #################################
