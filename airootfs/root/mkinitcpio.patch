@@ -1,0 +1,25 @@
+--- mkinitcpio.conf	2021-09-16 14:07:54.537697914 +0200
++++ mkinitcpio-eos.conf	2021-09-16 14:11:07.452658375 +0200
+@@ -4,7 +4,7 @@
+ # run.  Advanced users may wish to specify all system modules
+ # in this array.  For instance:
+ #     MODULES=(piix ide_disk reiserfs)
+-MODULES=()
++MODULES=(vmd)
+ 
+ # BINARIES
+ # This setting includes any additional binaries a given user may
+@@ -54,7 +54,7 @@
+ # COMPRESSION
+ # Use this to compress the initramfs image. By default, zstd compression
+ # is used. Use 'cat' to create an uncompressed image.
+-#COMPRESSION="zstd"
++COMPRESSION="zstd"
+ #COMPRESSION="gzip"
+ #COMPRESSION="bzip2"
+ #COMPRESSION="lzma"
+@@ -65,3 +65,4 @@
+ # COMPRESSION_OPTIONS
+ # Additional options for the compressor
+ #COMPRESSION_OPTIONS=()
++

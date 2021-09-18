@@ -88,7 +88,7 @@ sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 systemctl enable NetworkManager.service vboxservice.service vmtoolsd.service vmware-vmblock-fuse.service systemd-timesyncd
 systemctl set-default multi-user.target
 
-# revert from arch preset to default preset
+# revert from arch-iso preset to default preset
 cp -rf /usr/share/mkinitcpio/hook.preset /etc/mkinitcpio.d/linux.preset
 sed -i 's?%PKGBASE%?linux?' /etc/mkinitcpio.d/linux.preset
 
@@ -97,28 +97,37 @@ wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-iso-next/08-
 cp mirrorlist /etc/pacman.d/
 rm mirrorlist
 
-# to install locally builded packages on ISO:
-#pacman -U --noconfirm /root/calamares_current-3.2.42-1-any.pkg.tar.zst
-#rm /root/calamares_current-3.2.42-1-any.pkg.tar.zst
-#pacman -U --noconfirm /root/calamares_config_next-2.3-4-any.pkg.tar.zst
-#rm /root/calamares_config_next-2.3-4-any.pkg.tar.zst
-#rm /var/log/pacman.log
-
 # set EndeavourOS specific grub config
-sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
-sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub
-sed -i 's?\#GRUB_THEME=.*?GRUB_THEME=\/boot\/grub\/themes\/EndeavourOS\/theme.txt?g' /etc/default/grub
-sed -i 's?\#GRUB_DISABLE_SUBMENU=y?GRUB_DISABLE_SUBMENU=y?g' /etc/default/grub
-echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
+#sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=\"\(.*\)\"$|GRUB_CMDLINE_LINUX_DEFAULT=\"\1 nowatchdog\"|' /etc/default/grub
+#sed -i 's?GRUB_DISTRIBUTOR=.*?GRUB_DISTRIBUTOR=\"EndeavourOS\"?' /etc/default/grub
+#sed -i 's?\#GRUB_THEME=.*?GRUB_THEME=\/boot\/grub\/themes\/EndeavourOS\/theme.txt?g' /etc/default/grub
+#sed -i 's?\#GRUB_DISABLE_SUBMENU=y?GRUB_DISABLE_SUBMENU=y?g' /etc/default/grub
+#echo 'GRUB_DISABLE_OS_PROBER=false' >> /etc/default/grub
+# patching the same now:
+patch -u /etc/default/grub -i /root/grub.patch
+rm /root/grub.patch
+
+# get and patch default mkinitcpio.conf
+wget https://raw.githubusercontent.com/archlinux/mkinitcpio/master/mkinitcpio.conf
+patch -u mkinitcpio.conf -i /root/mkinitcpio.patch
+cp mkinitcpio.conf /etc/
+rm mkinitcpio.conf
 
 # remove unneeded grub stuff from /boot
-rm /boot/grub/grub.cfg
+# rm /boot/grub/grub.cfg #archiso does not create it anymore
 rm -R /boot/syslinux
 rm -R /boot/memtest86+
 rm /boot/amd-ucode.img
 rm /boot/initramfs-linux.img
 rm /boot/intel-ucode.img
 rm /boot/vmlinuz-linux
+
+# to install locally builded packages on ISO:
+#pacman -U --noconfirm /root/calamares_current-3.2.42-10-any.pkg.tar.zst
+#rm /root/calamares_current-3.2.42-10-any.pkg.tar.zst
+#pacman -U --noconfirm /root/calamares_config_next-2.3-8-any.pkg.tar.zst
+#rm /root/calamares_config_next-2.3-8-any.pkg.tar.zst
+#rm /var/log/pacman.log
 
 # custom fixes currently needed
 
