@@ -242,6 +242,7 @@ bash-completion
 downgrade
 pcurses
 tldr
+duf
 
 #calamares
 lsb-release
