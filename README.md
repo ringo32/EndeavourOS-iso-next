@@ -58,8 +58,10 @@ https://github.com/endeavouros-team/mirrors
 ## Install necessary packages
 `sudo pacman -S archiso mkinitcpio-archiso git squashfs-tools --needed`
 
-Clone:\
-`git clone -b 08-2021 --single-branch https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
+Clone:
+`git clone https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
+
+for testing you can use a branch: `git clone -b 08-2021 --single-branch https://github.com/endeavouros-team/EndeavourOS-iso-next.git`
 
 `cd EndeavourOS-iso-next`
 
