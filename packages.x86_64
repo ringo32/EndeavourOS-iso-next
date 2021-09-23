@@ -39,6 +39,7 @@ syslinux
 memtest86+
 xcompmgr
 arch-install-scripts
+pv
 
 #x-system
 xf86-video-vesa
